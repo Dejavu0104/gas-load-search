@@ -1,0 +1,402 @@
+[
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"G 1.6,    G - 4",
+        "Maximum Capacity CFTHr":200.0,
+        "70% of Meter Capacity at 8 Psig Pressure":207.7824,
+        "Meter Room Size (WxLxH) In Ft":"Hanging",
+        "88% of Meter Mechanical Capacity (ACFT)":176.47
+    },
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"MR 9",
+        "Maximum Capacity CFTHr":320.0,
+        "70% of Meter Capacity at 8 Psig Pressure":332.45184,
+        "Meter Room Size (WxLxH) In Ft":"Hanging",
+        "88% of Meter Mechanical Capacity (ACFT)":282.352
+    },
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"ITR 400   (Not Available)",
+        "Maximum Capacity CFTHr":400.0,
+        "70% of Meter Capacity at 8 Psig Pressure":415.5648,
+        "Meter Room Size (WxLxH) In Ft":"Hanging",
+        "88% of Meter Mechanical Capacity (ACFT)":352.94
+    },
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"AL 425,  MR 12,  @  2'' Diff",
+        "Maximum Capacity CFTHr":900.0,
+        "70% of Meter Capacity at 8 Psig Pressure":935.0208,
+        "Meter Room Size (WxLxH) In Ft":"Hanging",
+        "88% of Meter Mechanical Capacity (ACFT)":794.115
+    },
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"RW 750,   @  2'' Diff",
+        "Maximum Capacity CFTHr":1600.0,
+        "70% of Meter Capacity at 8 Psig Pressure":1662.2592,
+        "Meter Room Size (WxLxH) In Ft":"Hanging",
+        "88% of Meter Mechanical Capacity (ACFT)":1411.76
+    },
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"AL 800  @ 2'' Diff",
+        "Maximum Capacity CFTHr":1695.0,
+        "70% of Meter Capacity at 8 Psig Pressure":1760.95584,
+        "Meter Room Size (WxLxH) In Ft":"Hanging",
+        "88% of Meter Mechanical Capacity (ACFT)":1495.58325
+    },
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"800 A,  @ 2'' Diff",
+        "Maximum Capacity CFTHr":1900.0,
+        "70% of Meter Capacity at 8 Psig Pressure":1973.9328,
+        "Meter Room Size (WxLxH) In Ft":"Hanging",
+        "88% of Meter Mechanical Capacity (ACFT)":1676.465
+    },
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"RW 1000",
+        "Maximum Capacity CFTHr":2000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":2077.824,
+        "Meter Room Size (WxLxH) In Ft":"Hanging",
+        "88% of Meter Mechanical Capacity (ACFT)":1764.7
+    },
+    {
+        "Load CFTHr From":176.0,
+        "Load CFTHr To":1324.0,
+        "Service Size (Inches)":"1\"",
+        "Meter Type":"RC 1.5M, RM 1.5M, FMR 1.5M",
+        "Maximum Capacity CFTHr":1500.0,
+        "70% of Meter Capacity at 8 Psig Pressure":1558.368,
+        "Meter Room Size (WxLxH) In Ft":"8x16x10",
+        "88% of Meter Mechanical Capacity (ACFT)":1323.525
+    },
+    {
+        "Load CFTHr From":null,
+        "Load CFTHr To":null,
+        "Service Size (Inches)":null,
+        "Meter Type":null,
+        "Maximum Capacity CFTHr":null,
+        "70% of Meter Capacity at 8 Psig Pressure":null,
+        "Meter Room Size (WxLxH) In Ft":null,
+        "88% of Meter Mechanical Capacity (ACFT)":0.0
+    },
+    {
+        "Load CFTHr From":1400.0,
+        "Load CFTHr To":14118.0,
+        "Service Size (Inches)":"2\"",
+        "Meter Type":"RC 3M, ELS 65, RM 3M, FMR 3M",
+        "Maximum Capacity CFTHr":3000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":3116.736,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":2647.05
+    },
+    {
+        "Load CFTHr From":1400.0,
+        "Load CFTHr To":14118.0,
+        "Service Size (Inches)":"2\"",
+        "Meter Type":"D-G100, ELS 100, RC 5M, RM 140, FMR 5M",
+        "Maximum Capacity CFTHr":5000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":5194.56,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":4411.75
+    },
+    {
+        "Load CFTHr From":1400.0,
+        "Load CFTHr To":14118.0,
+        "Service Size (Inches)":"2\"",
+        "Meter Type":"ELS 160,  RC 7M, RIM 7M, RM 7M, FMR 7M, RIM G160",
+        "Maximum Capacity CFTHr":7000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":7272.384,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":6176.45
+    },
+    {
+        "Load CFTHr From":1400.0,
+        "Load CFTHr To":14118.0,
+        "Service Size (Inches)":"2\"",
+        "Meter Type":"RC 11M, RIM 11M, FMR 11M",
+        "Maximum Capacity CFTHr":11000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":11428.032,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":9705.85
+    },
+    {
+        "Load CFTHr From":1400.0,
+        "Load CFTHr To":14118.0,
+        "Service Size (Inches)":"2\"",
+        "Meter Type":"RIM 12M",
+        "Maximum Capacity CFTHr":12000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":12466.944,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":10588.2
+    },
+    {
+        "Load CFTHr From":1400.0,
+        "Load CFTHr To":14118.0,
+        "Service Size (Inches)":"2\"",
+        "Meter Type":"D-G250, ELS 250, RIM 14M",
+        "Maximum Capacity CFTHr":14000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":14544.768,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":12352.9
+    },
+    {
+        "Load CFTHr From":1400.0,
+        "Load CFTHr To":14118.0,
+        "Service Size (Inches)":"2\"",
+        "Meter Type":"RC 16M, RIM 16M, RABO DN 100.",
+        "Maximum Capacity CFTHr":16000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":16622.592,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":14117.6
+    },
+    {
+        "Load CFTHr From":null,
+        "Load CFTHr To":null,
+        "Service Size (Inches)":null,
+        "Meter Type":null,
+        "Maximum Capacity CFTHr":null,
+        "70% of Meter Capacity at 8 Psig Pressure":null,
+        "Meter Room Size (WxLxH) In Ft":null,
+        "88% of Meter Mechanical Capacity (ACFT)":null
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"RC 16M, RIM 16M, RABO DN 100.",
+        "Maximum Capacity CFTHr":16000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":16622.592,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":14117.6
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"AAT-18,  T-18",
+        "Maximum Capacity CFTHr":18000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":18700.416,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":15882.3
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"RIM 22M",
+        "Maximum Capacity CFTHr":22000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":22856.064,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":19411.7
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"D-G400,  ELS 400,  RC 23M, RABO DN 150",
+        "Maximum Capacity CFTHr":23000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":23894.976,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":20294.05
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"AAT-30 , T-30",
+        "Maximum Capacity CFTHr":30000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":31167.36,
+        "Meter Room Size (WxLxH) In Ft":"12x35x10",
+        "88% of Meter Mechanical Capacity (ACFT)":26470.5
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"D-G650",
+        "Maximum Capacity CFTHr":35000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":36361.92,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":30882.25
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"ELS 650,  AAT-35, T-35",
+        "Maximum Capacity CFTHr":35000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":36361.92,
+        "Meter Room Size (WxLxH) In Ft":"12x35x10",
+        "88% of Meter Mechanical Capacity (ACFT)":30882.25
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"RIM 36M",
+        "Maximum Capacity CFTHr":36000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":37400.832,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":31764.6
+    },
+    {
+        "Load CFTHr From":14500.0,
+        "Load CFTHr To":33529.0,
+        "Service Size (Inches)":"4\"",
+        "Meter Type":"RM 1100, RC 38M, RIM 38M, FMR 38M",
+        "Maximum Capacity CFTHr":38000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":39478.656,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10",
+        "88% of Meter Mechanical Capacity (ACFT)":33529.3
+    },
+    {
+        "Load CFTHr From":null,
+        "Load CFTHr To":null,
+        "Service Size (Inches)":null,
+        "Meter Type":null,
+        "Maximum Capacity CFTHr":null,
+        "70% of Meter Capacity at 8 Psig Pressure":null,
+        "Meter Room Size (WxLxH) In Ft":null,
+        "88% of Meter Mechanical Capacity (ACFT)":null
+    },
+    {
+        "Load CFTHr From":34000.0,
+        "Load CFTHr To":52941.0,
+        "Service Size (Inches)":"6\"",
+        "Meter Type":"RM 1100, RC 38M,  RIM 38M, FMR 38M",
+        "Maximum Capacity CFTHr":38000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":39478.656,
+        "Meter Room Size (WxLxH) In Ft":"12x20x10\nFor 56M\/Turbine: 16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":33529.3
+    },
+    {
+        "Load CFTHr From":34000.0,
+        "Load CFTHr To":52941.0,
+        "Service Size (Inches)":"6\"",
+        "Meter Type":"Els 1000, RC 56M, FMR 56M",
+        "Maximum Capacity CFTHr":56000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":58179.072,
+        "Meter Room Size (WxLxH) In Ft":"16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":49411.6
+    },
+    {
+        "Load CFTHr From":34000.0,
+        "Load CFTHr To":52941.0,
+        "Service Size (Inches)":"6\"",
+        "Meter Type":"AAT-60, T-60",
+        "Maximum Capacity CFTHr":60000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":62334.72,
+        "Meter Room Size (WxLxH) In Ft":"16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":52941.0
+    },
+    {
+        "Load CFTHr From":null,
+        "Load CFTHr To":null,
+        "Service Size (Inches)":null,
+        "Meter Type":null,
+        "Maximum Capacity CFTHr":null,
+        "70% of Meter Capacity at 8 Psig Pressure":null,
+        "Meter Room Size (WxLxH) In Ft":null,
+        "88% of Meter Mechanical Capacity (ACFT)":null
+    },
+    {
+        "Load CFTHr From":53000.0,
+        "Load CFTHr To":90000.0,
+        "Service Size (Inches)":"8\"",
+        "Meter Type":"ELS 1000, RC 56M, FMR 56M",
+        "Maximum Capacity CFTHr":56000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":58179.072,
+        "Meter Room Size (WxLxH) In Ft":"16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":49411.6
+    },
+    {
+        "Load CFTHr From":53000.0,
+        "Load CFTHr To":90000.0,
+        "Service Size (Inches)":"8\"",
+        "Meter Type":"AAT-60, T-60",
+        "Maximum Capacity CFTHr":60000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":62334.72,
+        "Meter Room Size (WxLxH) In Ft":"16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":52941.0
+    },
+    {
+        "Load CFTHr From":53000.0,
+        "Load CFTHr To":90000.0,
+        "Service Size (Inches)":"8\"",
+        "Meter Type":"AAT-90, T-90",
+        "Maximum Capacity CFTHr":90000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":93502.08,
+        "Meter Room Size (WxLxH) In Ft":"16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":79411.5
+    },
+    {
+        "Load CFTHr From":53000.0,
+        "Load CFTHr To":90000.0,
+        "Service Size (Inches)":"8\"",
+        "Meter Type":"RC 102M",
+        "Maximum Capacity CFTHr":102000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":105969.024,
+        "Meter Room Size (WxLxH) In Ft":"16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":89999.7
+    },
+    {
+        "Load CFTHr From":null,
+        "Load CFTHr To":null,
+        "Service Size (Inches)":null,
+        "Meter Type":null,
+        "Maximum Capacity CFTHr":null,
+        "70% of Meter Capacity at 8 Psig Pressure":null,
+        "Meter Room Size (WxLxH) In Ft":null,
+        "88% of Meter Mechanical Capacity (ACFT)":null
+    },
+    {
+        "Load CFTHr From":90001.0,
+        "Load CFTHr To":202941.0,
+        "Service Size (Inches)":"8\"",
+        "Meter Type":"AAT-140,  T-140",
+        "Maximum Capacity CFTHr":140000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":145447.68,
+        "Meter Room Size (WxLxH) In Ft":"16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":123529.0
+    },
+    {
+        "Load CFTHr From":90001.0,
+        "Load CFTHr To":202941.0,
+        "Service Size (Inches)":"8\"",
+        "Meter Type":"AAT-230, T-230",
+        "Maximum Capacity CFTHr":230000.0,
+        "70% of Meter Capacity at 8 Psig Pressure":238949.76,
+        "Meter Room Size (WxLxH) In Ft":"16x45x10",
+        "88% of Meter Mechanical Capacity (ACFT)":202940.5
+    },
+    {
+        "Load CFTHr From":null,
+        "Load CFTHr To":null,
+        "Service Size (Inches)":null,
+        "Meter Type":null,
+        "Maximum Capacity CFTHr":null,
+        "70% of Meter Capacity at 8 Psig Pressure":null,
+        "Meter Room Size (WxLxH) In Ft":null,
+        "88% of Meter Mechanical Capacity (ACFT)":0.0
+    }
+]
