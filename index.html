@@ -2,22 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gas Load Data Search</title>
 
     <style>
-        /* Force landscape mode on mobile */
-        @media screen and (orientation: portrait) {
-            body {
-                transform: rotate(90deg);
-                transform-origin: left top;
-                width: 100vh;
-                height: 100vw;
-                overflow-x: hidden;
-                position: fixed;
-            }
-        }
-
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
@@ -73,7 +61,7 @@
             text-align: center;
         }
         th {
-            background-color: #007bff;
+            background-color: #004085;
             color: white;
         }
         tr:nth-child(even) {
@@ -81,6 +69,10 @@
         }
         tr:nth-child(odd) {
             background-color: #d9edf7;
+        }
+        td {
+            font-weight: bold;
+            color: #333;
         }
 
         /* Mobile Optimization */
@@ -90,6 +82,19 @@
             }
             th, td {
                 padding: 5px;
+            }
+        }
+
+        /* Suggest Landscape Mode on Mobile */
+        @media screen and (max-width: 768px) and (orientation: portrait) {
+            body::before {
+                content: "For better view, rotate your phone to landscape mode.";
+                display: block;
+                text-align: center;
+                background: red;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
             }
         }
     </style>
@@ -162,14 +167,14 @@ function displayResults(filteredData) {
 
     filteredData.forEach(item => {
         table += `<tr>
-            <td>${item["Load CFTHr From"]}</td>
-            <td>${item["Load CFTHr To"]}</td>
-            <td>${item["Service Size (Inches)"]}</td>
-            <td>${item["Meter Type"]}</td>
-            <td>${item["Maximum Capacity CFTHr"]}</td>
-            <td>${item["70% of Meter Capacity at 8 Psig Pressure"]}</td>
-            <td>${item["Meter Room Size (WxLxH) In Ft"]}</td>
-            <td>${item["88% of Meter Mechanical Capacity (ACFT)"]}</td>
+            <td style="background-color: #ffeeba; color: black;">${item["Load CFTHr From"]}</td>
+            <td style="background-color: #c3e6cb; color: black;">${item["Load CFTHr To"]}</td>
+            <td style="background-color: #f5c6cb; color: black;">${item["Service Size (Inches)"]}</td>
+            <td style="background-color: #d6d8db; color: black;">${item["Meter Type"]}</td>
+            <td style="background-color: #bee5eb; color: black;">${item["Maximum Capacity CFTHr"]}</td>
+            <td style="background-color: #ffdf7e; color: black;">${item["70% of Meter Capacity at 8 Psig Pressure"]}</td>
+            <td style="background-color: #b3e0ff; color: black;">${item["Meter Room Size (WxLxH) In Ft"]}</td>
+            <td style="background-color: #dabfff; color: black;">${item["88% of Meter Mechanical Capacity (ACFT)"]}</td>
         </tr>`;
     });
 
