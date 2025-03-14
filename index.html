@@ -6,7 +6,6 @@
     <title>Gas Load Data Search</title>
 
     <style>
-        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -41,8 +40,6 @@
         button:hover {
             background-color: #0056b3;
         }
-
-        /* Responsive Table */
         .table-container {
             width: 100%;
             overflow-x: auto;
@@ -74,8 +71,6 @@
             font-weight: bold;
             color: #333;
         }
-
-        /* Mobile Optimization */
         @media screen and (max-width: 768px) {
             table {
                 font-size: 12px;
@@ -145,7 +140,7 @@ function fetchAndDisplayData() {
                     alert("Please enter a service size.");
                     return;
                 }
-                filteredData = data.filter(item => item["Service Size (Inches)"].toString().trim().replace(/"/g, '') === serviceSize);
+                filteredData = data.filter(item => item["Service Size (Inches)"].replace(/\"/g, '') === serviceSize);
             }
             
             displayResults(filteredData);
@@ -178,7 +173,7 @@ function displayResults(filteredData) {
         table += `<tr>
             <td>${item["Load CFTHr From"]}</td>
             <td>${item["Load CFTHr To"]}</td>
-            <td>${item["Service Size (Inches)"]}</td>
+            <td>${item["Service Size (Inches)"].replace(/\"/g, '')}</td>
             <td>${item["Meter Type"]}</td>
             <td>${parseInt(item["Maximum Capacity CFTHr"])}</td>
             <td>${parseInt(item["70% of Meter Capacity at 8 Psig Pressure"])}</td>
