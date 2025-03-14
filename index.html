@@ -45,7 +45,7 @@
         /* Responsive Table */
         .table-container {
             width: 100%;
-            overflow-x: auto; /* Enables horizontal scrolling inside the table */
+            overflow-x: auto;
             display: block;
             margin-top: 20px;
         }
@@ -84,19 +84,6 @@
                 padding: 5px;
             }
         }
-
-        /* Suggest Landscape Mode on Mobile */
-        @media screen and (max-width: 768px) and (orientation: portrait) {
-            body::before {
-                content: "For better view, rotate your phone to landscape mode.";
-                display: block;
-                text-align: center;
-                background: red;
-                color: white;
-                padding: 10px;
-                font-weight: bold;
-            }
-        }
     </style>
 </head>
 <body>
@@ -130,51 +117,43 @@ function fetchAndDisplayData() {
                 return;
             }
 
-            // Step 1: Find rows where "Load CFT/Hr From" is >= entered From value
-            let filteredData = data.filter(item => item["Load CFTHr From"] >= fromValue);
-
-            // Step 2: Further filter rows where "Load CFT/Hr To" is <= entered To value
-            filteredData = filteredData.filter(item => item["Load CFTHr To"] <= toValue);
-
+            let filteredData = data.filter(item => item["Load CFTHr From"] >= fromValue && item["Load CFTHr To"] <= toValue);
             displayResults(filteredData);
         })
         .catch(error => console.error('Error loading JSON:', error));
 }
 
-// Function to Display Results
 function displayResults(filteredData) {
     let resultsContainer = document.getElementById("results");
-    resultsContainer.innerHTML = ""; // Clear previous results
+    resultsContainer.innerHTML = "";
 
     if (filteredData.length === 0) {
         resultsContainer.innerHTML = "<p>No results found</p>";
         return;
     }
 
-    let table = `
-        <table>
-            <tr>
-                <th>Load CFT/Hr From</th>
-                <th>Load CFT/Hr To</th>
-                <th>Service Size (Inches)</th>
-                <th>Meter Type</th>
-                <th>Maximum Capacity CFT/Hr</th>
-                <th>70% of Meter Capacity at 8 Psig Pressure</th>
-                <th>Meter Room Size (WxLxH) In Ft</th>
-                <th>88% of Meter Mechanical Capacity (ACFT)</th>
-            </tr>
-    `;
+    let table = `<table>
+        <tr>
+            <th>Load CFT/Hr From</th>
+            <th>Load CFT/Hr To</th>
+            <th>Service Size (Inches)</th>
+            <th>Meter Type</th>
+            <th>Maximum Capacity CFT/Hr</th>
+            <th>70% of Meter Capacity at 8 Psig Pressure</th>
+            <th>Meter Room Size (WxLxH) In Ft</th>
+            <th>88% of Meter Mechanical Capacity (ACFT)</th>
+        </tr>`;
 
     filteredData.forEach(item => {
         table += `<tr>
-            <td style="background-color: #ffeeba; color: black;">${item["Load CFTHr From"]}</td>
-            <td style="background-color: #c3e6cb; color: black;">${item["Load CFTHr To"]}</td>
-            <td style="background-color: #f5c6cb; color: black;">${item["Service Size (Inches)"]}</td>
-            <td style="background-color: #d6d8db; color: black;">${item["Meter Type"]}</td>
-            <td style="background-color: #bee5eb; color: black;">${item["Maximum Capacity CFTHr"]}</td>
-            <td style="background-color: #ffdf7e; color: black;">${item["70% of Meter Capacity at 8 Psig Pressure"]}</td>
-            <td style="background-color: #b3e0ff; color: black;">${item["Meter Room Size (WxLxH) In Ft"]}</td>
-            <td style="background-color: #dabfff; color: black;">${item["88% of Meter Mechanical Capacity (ACFT)"]}</td>
+            <td>${item["Load CFTHr From"]}</td>
+            <td>${item["Load CFTHr To"]}</td>
+            <td>${item["Service Size (Inches)"]}</td>
+            <td>${item["Meter Type"]}</td>
+            <td>${parseFloat(item["Maximum Capacity CFTHr"]).toFixed(2)}</td>
+            <td>${parseFloat(item["70% of Meter Capacity at 8 Psig Pressure"]).toFixed(2)}</td>
+            <td>${item["Meter Room Size (WxLxH) In Ft"]}</td>
+            <td>${parseFloat(item["88% of Meter Mechanical Capacity (ACFT)"]).toFixed(2)}</td>
         </tr>`;
     });
 
