@@ -150,10 +150,10 @@ function displayResults(filteredData) {
             <td>${item["Load CFTHr To"]}</td>
             <td>${item["Service Size (Inches)"]}</td>
             <td>${item["Meter Type"]}</td>
-            <td>${parseFloat(item["Maximum Capacity CFTHr"]).toFixed(2)}</td>
-            <td>${parseFloat(item["70% of Meter Capacity at 8 Psig Pressure"]).toFixed(2)}</td>
+            <td>${Math.round(item["Maximum Capacity CFTHr"])}</td>
+            <td>${Math.round(item["70% of Meter Capacity at 8 Psig Pressure"])}</td>
             <td>${item["Meter Room Size (WxLxH) In Ft"]}</td>
-            <td>${parseFloat(item["88% of Meter Mechanical Capacity (ACFT)"]).toFixed(2)}</td>
+            <td>${Math.round(item["88% of Meter Mechanical Capacity (ACFT)"])}</td>
         </tr>`;
     });
 
