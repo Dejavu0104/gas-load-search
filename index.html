@@ -145,7 +145,7 @@ function fetchAndDisplayData() {
                     alert("Please enter a service size.");
                     return;
                 }
-                filteredData = data.filter(item => item["Service Size (Inches)"].toString() === serviceSize);
+                filteredData = data.filter(item => item["Service Size (Inches)"].toString().trim() === serviceSize);
             }
             
             displayResults(filteredData);
