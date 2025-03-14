@@ -25,7 +25,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input, button {
+        input, button, select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -91,11 +91,24 @@
 <div class="container">
     <h2>Gas Load Data Search</h2>
 
-    <label for="fromValue">Load CFT/Hr From:</label>
-    <input type="number" id="fromValue" placeholder="Enter min value">
+    <label for="searchType">Search By:</label>
+    <select id="searchType" onchange="toggleSearchFields()">
+        <option value="loadRange">Load Range</option>
+        <option value="serviceSize">Service Size</option>
+    </select>
 
-    <label for="toValue">Load CFT/Hr To:</label>
-    <input type="number" id="toValue" placeholder="Enter max value">
+    <div id="loadRangeFields">
+        <label for="fromValue">Load CFT/Hr From:</label>
+        <input type="number" id="fromValue" placeholder="Enter min value">
+
+        <label for="toValue">Load CFT/Hr To:</label>
+        <input type="number" id="toValue" placeholder="Enter max value">
+    </div>
+
+    <div id="serviceSizeField" style="display:none;">
+        <label for="serviceSize">Service Size (Inches):</label>
+        <input type="text" id="serviceSize" placeholder="Enter service size">
+    </div>
 
     <button onclick="fetchAndDisplayData()">Search</button>
 
@@ -105,19 +118,36 @@
 </div>
 
 <script>
+function toggleSearchFields() {
+    let searchType = document.getElementById("searchType").value;
+    document.getElementById("loadRangeFields").style.display = searchType === "loadRange" ? "block" : "none";
+    document.getElementById("serviceSizeField").style.display = searchType === "serviceSize" ? "block" : "none";
+}
+
 function fetchAndDisplayData() {
     fetch('gas_load_data.json')
         .then(response => response.json())
         .then(data => {
-            let fromValue = parseFloat(document.getElementById("fromValue").value);
-            let toValue = parseFloat(document.getElementById("toValue").value);
+            let searchType = document.getElementById("searchType").value;
+            let filteredData = [];
 
-            if (isNaN(fromValue) || isNaN(toValue)) {
-                alert("Please enter both 'From' and 'To' values.");
-                return;
+            if (searchType === "loadRange") {
+                let fromValue = parseFloat(document.getElementById("fromValue").value);
+                let toValue = parseFloat(document.getElementById("toValue").value);
+                if (isNaN(fromValue) || isNaN(toValue)) {
+                    alert("Please enter both 'From' and 'To' values.");
+                    return;
+                }
+                filteredData = data.filter(item => item["Load CFTHr From"] >= fromValue && item["Load CFTHr To"] <= toValue);
+            } else {
+                let serviceSize = document.getElementById("serviceSize").value.trim();
+                if (!serviceSize) {
+                    alert("Please enter a service size.");
+                    return;
+                }
+                filteredData = data.filter(item => item["Service Size (Inches)"].toString() === serviceSize);
             }
-
-            let filteredData = data.filter(item => item["Load CFTHr From"] >= fromValue && item["Load CFTHr To"] <= toValue);
+            
             displayResults(filteredData);
         })
         .catch(error => console.error('Error loading JSON:', error));
@@ -150,10 +180,10 @@ function displayResults(filteredData) {
             <td>${item["Load CFTHr To"]}</td>
             <td>${item["Service Size (Inches)"]}</td>
             <td>${item["Meter Type"]}</td>
-            <td>${Math.round(item["Maximum Capacity CFTHr"])}</td>
-            <td>${Math.round(item["70% of Meter Capacity at 8 Psig Pressure"])}</td>
+            <td>${parseInt(item["Maximum Capacity CFTHr"])}</td>
+            <td>${parseInt(item["70% of Meter Capacity at 8 Psig Pressure"])}</td>
             <td>${item["Meter Room Size (WxLxH) In Ft"]}</td>
-            <td>${Math.round(item["88% of Meter Mechanical Capacity (ACFT)"])}</td>
+            <td>${parseInt(item["88% of Meter Mechanical Capacity (ACFT)"])}</td>
         </tr>`;
     });
 
