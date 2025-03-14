@@ -6,6 +6,7 @@
     <title>Gas Load Data Search</title>
 
     <style>
+        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -24,7 +25,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input, button, select {
+        input, button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -40,9 +41,11 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        /* Responsive Table */
         .table-container {
             width: 100%;
-            overflow-x: auto;
+            overflow-x: auto; /* Enables horizontal scrolling inside the table */
             display: block;
             margin-top: 20px;
         }
@@ -71,12 +74,27 @@
             font-weight: bold;
             color: #333;
         }
+
+        /* Mobile Optimization */
         @media screen and (max-width: 768px) {
             table {
                 font-size: 12px;
             }
             th, td {
                 padding: 5px;
+            }
+        }
+
+        /* Suggest Landscape Mode on Mobile */
+        @media screen and (max-width: 768px) and (orientation: portrait) {
+            body::before {
+                content: "For better view, rotate your phone to landscape mode.";
+                display: block;
+                text-align: center;
+                background: red;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
             }
         }
     </style>
@@ -86,24 +104,11 @@
 <div class="container">
     <h2>Gas Load Data Search</h2>
 
-    <label for="searchType">Search By:</label>
-    <select id="searchType" onchange="toggleSearchFields()">
-        <option value="loadRange">Load Range</option>
-        <option value="serviceSize">Service Size</option>
-    </select>
+    <label for="fromValue">Load CFT/Hr From:</label>
+    <input type="number" id="fromValue" placeholder="Enter min value">
 
-    <div id="loadRangeFields">
-        <label for="fromValue">Load CFT/Hr From:</label>
-        <input type="number" id="fromValue" placeholder="Enter min value">
-
-        <label for="toValue">Load CFT/Hr To:</label>
-        <input type="number" id="toValue" placeholder="Enter max value">
-    </div>
-
-    <div id="serviceSizeField" style="display:none;">
-        <label for="serviceSize">Service Size (Inches):</label>
-        <input type="text" id="serviceSize" placeholder="Enter service size">
-    </div>
+    <label for="toValue">Load CFT/Hr To:</label>
+    <input type="number" id="toValue" placeholder="Enter max value">
 
     <button onclick="fetchAndDisplayData()">Search</button>
 
@@ -113,72 +118,63 @@
 </div>
 
 <script>
-function toggleSearchFields() {
-    let searchType = document.getElementById("searchType").value;
-    document.getElementById("loadRangeFields").style.display = searchType === "loadRange" ? "block" : "none";
-    document.getElementById("serviceSizeField").style.display = searchType === "serviceSize" ? "block" : "none";
-}
-
 function fetchAndDisplayData() {
     fetch('gas_load_data.json')
         .then(response => response.json())
         .then(data => {
-            let searchType = document.getElementById("searchType").value;
-            let filteredData = [];
+            let fromValue = parseFloat(document.getElementById("fromValue").value);
+            let toValue = parseFloat(document.getElementById("toValue").value);
 
-            if (searchType === "loadRange") {
-                let fromValue = parseFloat(document.getElementById("fromValue").value);
-                let toValue = parseFloat(document.getElementById("toValue").value);
-                if (isNaN(fromValue) || isNaN(toValue)) {
-                    alert("Please enter both 'From' and 'To' values.");
-                    return;
-                }
-                filteredData = data.filter(item => item["Load CFTHr From"] >= fromValue && item["Load CFTHr To"] <= toValue);
-            } else {
-                let serviceSize = document.getElementById("serviceSize").value.trim();
-                if (!serviceSize) {
-                    alert("Please enter a service size.");
-                    return;
-                }
-                filteredData = data.filter(item => item["Service Size (Inches)"].replace(/\"/g, '') === serviceSize);
+            if (isNaN(fromValue) || isNaN(toValue)) {
+                alert("Please enter both 'From' and 'To' values.");
+                return;
             }
-            
+
+            // Step 1: Find rows where "Load CFT/Hr From" is >= entered From value
+            let filteredData = data.filter(item => item["Load CFTHr From"] >= fromValue);
+
+            // Step 2: Further filter rows where "Load CFT/Hr To" is <= entered To value
+            filteredData = filteredData.filter(item => item["Load CFTHr To"] <= toValue);
+
             displayResults(filteredData);
         })
         .catch(error => console.error('Error loading JSON:', error));
 }
 
+// Function to Display Results
 function displayResults(filteredData) {
     let resultsContainer = document.getElementById("results");
-    resultsContainer.innerHTML = "";
+    resultsContainer.innerHTML = ""; // Clear previous results
 
     if (filteredData.length === 0) {
         resultsContainer.innerHTML = "<p>No results found</p>";
         return;
     }
 
-    let table = `<table>
-        <tr>
-            <th>Load CFT/Hr From</th>
-            <th>Load CFT/Hr To</th>
-            <th>Service Size (Inches)</th>
-            <th>Meter Type</th>
-            <th>Maximum Capacity CFT/Hr</th>
-            <th>70% of Meter Capacity at 8 Psig Pressure</th>
-            <th>Meter Room Size (WxLxH) In Ft</th>
-            <th>88% of Meter Mechanical Capacity (ACFT)</th>
-        </tr>`;
+    let table = `
+        <table>
+            <tr>
+                <th>Load CFT/Hr From</th>
+                <th>Load CFT/Hr To</th>
+                <th>Service Size (Inches)</th>
+                <th>Meter Type</th>
+                <th>Maximum Capacity CFT/Hr</th>
+                <th>70% of Meter Capacity at 8 Psig Pressure</th>
+                <th>Meter Room Size (WxLxH) In Ft</th>
+                <th>88% of Meter Mechanical Capacity (ACFT)</th>
+            </tr>
+    `;
 
     filteredData.forEach(item => {
         table += `<tr>
-            <td>${item["Load CFTHr From"]}</td>
-            <td>${item["Load CFTHr To"]}</td>
-            <td>${item["Service Size (Inches)"].replace(/\"/g, '')}</td>
-            <td>${item["Meter Type"]}</td>
-            <td>${parseInt(item["Maximum Capacity CFTHr"])}</td>
-            <td>${parseInt(item["70% of Meter Capacity at 8 Psig Pressure"])}</td>
-            <td>${item["Meter Room Size (WxLxH) In Ft"]}</td>
-            <td>${parseInt(item["88% of Meter Mechanical Capacity (ACFT)"])}</td>
+            <td style="background-color: #ffeeba; color: black;">${item["Load CFTHr From"]}</td>
+            <td style="background-color: #c3e6cb; color: black;">${item["Load CFTHr To"]}</td>
+            <td style="background-color: #f5c6cb; color: black;">${item["Service Size (Inches)"]}</td>
+            <td style="background-color: #d6d8db; color: black;">${item["Meter Type"]}</td>
+            <td style="background-color: #bee5eb; color: black;">${item["Maximum Capacity CFTHr"]}</td>
+            <td style="background-color: #ffdf7e; color: black;">${item["70% of Meter Capacity at 8 Psig Pressure"]}</td>
+            <td style="background-color: #b3e0ff; color: black;">${item["Meter Room Size (WxLxH) In Ft"]}</td>
+            <td style="background-color: #dabfff; color: black;">${item["88% of Meter Mechanical Capacity (ACFT)"]}</td>
         </tr>`;
     });
 
